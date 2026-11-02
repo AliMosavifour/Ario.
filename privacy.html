@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="fa" dir="rtl"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ario Privacy</title>
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Vazirmatn:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: one centered column; glass cards float over soft violet/blue light; phones are the hero, everything else stays quiet. */
+:root{
+  --bg:#eceefb; --bg2:#e2e4f8; --ink:#13152d; --muted:#585c82;
+  --accent:#5a5cf0; --accent2:#8b5cf6; --on-accent:#fff;
+  --glass:rgba(255,255,255,.62); --glass-line:rgba(255,255,255,.85); --line:rgba(80,84,200,.16);
+  --orb1:rgba(110,120,255,.45); --orb2:rgba(170,110,255,.38); --shadow:0 20px 50px -20px rgba(60,60,170,.35);
+  --font-display:'Outfit','Vazirmatn',system-ui,sans-serif; --font-body:'Vazirmatn','Outfit',system-ui,sans-serif;
+  --show-l:block; --show-d:none; color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#090a18; --bg2:#0e1028; --ink:#eef0ff; --muted:#a2a6d0;
+  --accent:#7d86ff; --accent2:#a77dff; --on-accent:#0b0c20;
+  --glass:rgba(28,30,64,.55); --glass-line:rgba(140,150,255,.22); --line:rgba(140,150,255,.18);
+  --orb1:rgba(80,90,255,.35); --orb2:rgba(150,80,255,.3); --shadow:0 24px 60px -24px rgba(0,0,0,.8);
+  --show-l:none; --show-d:block; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#090a18; --bg2:#0e1028; --ink:#eef0ff; --muted:#a2a6d0;
+  --accent:#7d86ff; --accent2:#a77dff; --on-accent:#0b0c20;
+  --glass:rgba(28,30,64,.55); --glass-line:rgba(140,150,255,.22); --line:rgba(140,150,255,.18);
+  --orb1:rgba(80,90,255,.35); --orb2:rgba(150,80,255,.3); --shadow:0 24px 60px -24px rgba(0,0,0,.8);
+  --show-l:none; --show-d:block; color-scheme:dark;}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.75 var(--font-body);
+  padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));overflow-x:hidden;position:relative}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+.orbs{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.orbs i{position:absolute;border-radius:50%;filter:blur(90px)}
+.orbs i:nth-child(1){width:46vw;height:46vw;min-width:320px;min-height:320px;background:var(--orb1);top:-12vw;inset-inline-start:-10vw}
+.orbs i:nth-child(2){width:40vw;height:40vw;min-width:280px;min-height:280px;background:var(--orb2);top:30vh;inset-inline-end:-12vw}
+.wrap{position:relative;z-index:1;max-width:1120px;margin-inline:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:12px}
+h1,h2,h3{font-family:var(--font-display);line-height:1.25;text-wrap:balance;margin:0}
+[dir=rtl] h1,[dir=rtl] h2,[dir=rtl] h3{font-family:var(--font-body)}
+p{margin:0}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;margin-top:12px;display:flex;align-items:center;gap:12px;
+  padding:8px 10px 8px 14px;border-radius:22px;background:var(--glass);border:1px solid var(--glass-line);
+  backdrop-filter:blur(22px) saturate(1.5);-webkit-backdrop-filter:blur(22px) saturate(1.5);box-shadow:var(--shadow)}
+.brand{display:flex;align-items:center;gap:10px;font:700 20px var(--font-display);text-decoration:none;margin-inline-end:auto}
+.brand img{width:34px;height:34px;border-radius:10px}
+.links{display:flex;gap:4px}
+.links a{text-decoration:none;font-size:14px;color:var(--muted);padding:6px 12px;border-radius:12px}
+.links a:hover{color:var(--ink);background:var(--line)}
+.ctl{display:flex;gap:6px;align-items:center}
+.seg{display:flex;background:var(--line);border-radius:14px;padding:3px}
+.seg button,.ico{font:600 13px var(--font-body);border:0;background:none;color:var(--muted);padding:5px 10px;border-radius:11px;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--bg);color:var(--ink);box-shadow:0 1px 6px rgba(0,0,0,.12)}
+.ico{width:36px;height:36px;padding:0;display:grid;place-items:center;background:var(--line)}
+.ico svg{width:18px;height:18px}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;border-radius:18px;padding:14px 24px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--on-accent);box-shadow:0 14px 30px -10px var(--accent);
+  transition:transform .2s,box-shadow .2s;border:0;cursor:pointer;font-family:var(--font-body);font-size:16px}
+.btn:hover{transform:translateY(-2px);box-shadow:0 18px 36px -10px var(--accent)}
+.btn svg{width:22px;height:22px}
+.btn.sm{padding:8px 16px;font-size:14px;border-radius:14px}
+.btn.ghost{background:var(--glass);color:var(--ink);border:1px solid var(--glass-line);box-shadow:none}
+.glass{background:var(--glass);border:1px solid var(--glass-line);border-radius:28px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:var(--shadow)}
+
+
+.doc{max-width:760px;margin:40px auto 24px;padding:36px}
+.doc h1{font-size:clamp(28px,4.4vw,42px);margin:0 0 6px}
+.doc .upd{color:var(--muted);font-size:14px;margin-bottom:24px}
+.doc h2{font-size:20px;margin:28px 0 8px}
+.doc p,.doc li{color:var(--muted);font-size:16px}
+.doc ul{margin:8px 0;padding-inline-start:22px}
+.doc li{margin-block:4px}
+.doc a{color:var(--accent)}
+footer{padding-block:24px 48px;color:var(--muted);font-size:13px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+@media (max-width:560px){.doc{padding:24px 20px}.brand span{display:none}nav{padding-inline:10px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<div class="orbs" aria-hidden="true"><i></i><i></i></div>
+<div class="wrap">
+  <nav aria-label="main">
+    <a class="brand" href="./"><img src="assets/icon.webp" alt=""><span>Ario</span></a>
+    <div class="ctl">
+      <div class="seg" role="group" aria-label="language">
+        <button type="button" data-lang="fa" aria-pressed="true">فا</button>
+        <button type="button" data-lang="ar" aria-pressed="false">عر</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="ico" id="theme" type="button" aria-label="theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+      <a class="btn sm" href="./" data-i="back"></a>
+    </div>
+  </nav>
+  <main class="glass doc">
+    <h1 data-i="h"></h1>
+    <p class="upd" data-i="upd"></p>
+    <p data-i="intro"></p>
+    <h2 data-i="h1t"></h2><p data-i="h1p"></p>
+    <h2 data-i="h2t"></h2><ul id="perms"></ul>
+    <h2 data-i="h3t"></h2><p data-i="h3p"></p>
+    <h2 data-i="h4t"></h2><p data-i="h4p"></p>
+    <h2 data-i="h5t"></h2><p data-i="h5p"></p>
+    <h2 data-i="h6t"></h2><p data-i="h6p"></p>
+    <p id="contact" hidden></p>
+  </main>
+  <footer><span>© 2026 Ario</span><a href="./" data-i="back"></a></footer>
+</div>
+<script>
+(function(){
+/* Set this to your support email; the contact line stays hidden while it is empty. */
+var CONTACT_EMAIL='';
+var T={
+fa:{dir:'rtl',lang:'fa',back:'بازگشت به سایت',h:'حریم خصوصی',upd:'آخرین به‌روزرسانی: ۱۱ آبان ۱۴۰۵',
+ intro:'آریو یک برنامه‌ی مدیریت کار و برنامه‌ریزی روزانه است. این صفحه توضیح می‌دهد برنامه چه اطلاعاتی را و برای چه کاری استفاده می‌کند.',
+ h1t:'اطلاعات روی دستگاه شما',h1p:'کارها، دسته‌ها، تنظیمات و آمار شما روی خود گوشی ذخیره می‌شود. بدون ورود به حساب هم می‌توانید از برنامه استفاده کنید.',
+ h2t:'مجوزهای برنامه',
+ pl:['اعلان‌ها و آلارم دقیق: برای نمایش یادآوری کارها در ساعت تعیین‌شده و بعد از روشن‌شدن دوباره‌ی گوشی.','میکروفون: برای نوشتن کار و برنامه با صدا. صدا فقط برای تبدیل به متن استفاده می‌شود.','دوربین: برای اسکن عکس جدول برنامه و یادداشت.','اثر انگشت یا قفل زیستی: برای قفل اختیاری برنامه. اطلاعات زیستی شما در دسترس برنامه نیست و همه‌چیز را خود سیستم اندروید انجام می‌دهد.','اینترنت: برای ورود به حساب و بارگیری بخش‌هایی از برنامه.'],
+ h3t:'حساب کاربری',h3p:'اگر با ایمیل یا حساب گوگل وارد شوید، اطلاعات ورود و نام و شناسه‌ی نمایشی شما برای مدیریت حساب روی سرویس ابری برنامه نگهداری می‌شود. می‌توانید فقط با یک نام و بدون حساب هم ادامه دهید.',
+ h4t:'اشتراک با دیگران',h4p:'ما اطلاعات شما را نمی‌فروشیم و برای تبلیغات به شخص ثالث نمی‌دهیم.',
+ h5t:'حذف اطلاعات',h5p:'با حذف برنامه یا پاک‌کردن داده‌های آن از تنظیمات اندروید، اطلاعات روی دستگاه از بین می‌رود. برای حذف حساب ابری با ما تماس بگیرید.',
+ h6t:'تغییرات',h6p:'اگر این متن عوض شود، تاریخ بالای صفحه به‌روز می‌شود.',cl:'تماس: '},
+ar:{dir:'rtl',lang:'ar',back:'العودة إلى الموقع',h:'الخصوصية',upd:'آخر تحديث: 2 نوفمبر 2026',
+ intro:'آريو تطبيق لإدارة المهام والتخطيط اليومي. توضح هذه الصفحة ما البيانات التي يستخدمها التطبيق ولأي غرض.',
+ h1t:'البيانات على جهازك',h1p:'تُحفظ مهامك وفئاتك وإعداداتك وإحصاءاتك على هاتفك نفسه. يمكنك استخدام التطبيق دون تسجيل الدخول.',
+ h2t:'أذونات التطبيق',
+ pl:['الإشعارات والمنبّه الدقيق: لعرض التذكيرات في وقتها وبعد إعادة تشغيل الهاتف.','الميكروفون: لكتابة المهام والخطط بالصوت. يُستخدم الصوت للتحويل إلى نص فقط.','الكاميرا: لمسح صور الجداول والملاحظات.','بصمة الإصبع أو القفل الحيوي: لقفل التطبيق اختياريًا. لا يصل التطبيق إلى بياناتك الحيوية، ويتولى نظام أندرويد كل شيء.','الإنترنت: لتسجيل الدخول وتحميل بعض أجزاء التطبيق.'],
+ h3t:'الحساب',h3p:'إذا سجّلت الدخول بالبريد أو بحساب جوجل، تُحفظ بيانات الدخول والاسم والمعرّف المعروض على الخدمة السحابية للتطبيق لإدارة الحساب. يمكنك المتابعة بالاسم فقط دون حساب.',
+ h4t:'المشاركة مع الآخرين',h4p:'لا نبيع بياناتك ولا نعطيها لجهات خارجية لأغراض الإعلان.',
+ h5t:'حذف البيانات',h5p:'عند حذف التطبيق أو مسح بياناته من إعدادات أندرويد تُحذف البيانات من الجهاز. لحذف الحساب السحابي تواصل معنا.',
+ h6t:'التغييرات',h6p:'إذا تغيّر هذا النص يُحدَّث التاريخ أعلى الصفحة.',cl:'للتواصل: '},
+en:{dir:'ltr',lang:'en',back:'Back to site',h:'Privacy',upd:'Last updated: 2 November 2026',
+ intro:'Ario is a task manager and daily planner. This page explains what information the app uses and why.',
+ h1t:'Data on your device',h1p:'Your tasks, categories, settings and stats are stored on your phone. You can use the app without signing in.',
+ h2t:'Permissions',
+ pl:['Notifications and exact alarms: to show reminders at the time you set, including after a phone restart.','Microphone: to add tasks and plans by voice. Audio is used only to turn speech into text.','Camera: to scan photos of timetables and notes.','Fingerprint or biometric lock: for the optional app lock. The app never sees your biometric data; Android handles it.','Internet: to sign in and to load some parts of the app.'],
+ h3t:'Account',h3p:'If you sign in with email or a Google account, your sign-in details, name and display ID are kept on the app\'s cloud service to manage the account. You can also continue with just a name and no account.',
+ h4t:'Sharing',h4p:'We do not sell your data and we do not give it to third parties for advertising.',
+ h5t:'Deleting data',h5p:'Uninstalling the app or clearing its data in Android settings removes the data on your device. Contact us to delete a cloud account.',
+ h6t:'Changes',h6p:'If this text changes, the date at the top of the page is updated.',cl:'Contact: '}
+};
+var root=document.documentElement,cur='fa';
+function setLang(l){
+  var d=T[l]||T.fa;cur=T[l]?l:'fa';root.lang=d.lang;root.dir=d.dir;
+  document.querySelectorAll('[data-i]').forEach(function(e){var v=d[e.getAttribute('data-i')];if(v!=null)e.textContent=v});
+  var ul=document.getElementById('perms');ul.textContent='';
+  d.pl.forEach(function(t){var li=document.createElement('li');li.textContent=t;ul.appendChild(li)});
+  var c=document.getElementById('contact');
+  if(CONTACT_EMAIL){c.hidden=false;c.textContent=d.cl+CONTACT_EMAIL}
+  document.querySelectorAll('[data-lang]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===cur)});
+  try{localStorage.setItem('ario.lang',cur)}catch(e){}
+}
+document.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang)})});
+document.getElementById('theme').addEventListener('click',function(){
+  var dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme=dark?'light':'dark';try{localStorage.setItem('ario.theme',root.dataset.theme)}catch(e){}
+});
+var l='',th=null;try{l=localStorage.getItem('ario.lang')||'';th=localStorage.getItem('ario.theme')}catch(e){}
+if(!l){var n=(navigator.language||'').slice(0,2);l=T[n]?n:'fa'}
+if(th)root.dataset.theme=th;
+setLang(l);
+})();
+</script></body></html>
