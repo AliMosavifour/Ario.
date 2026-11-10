@@ -1,11 +1,32 @@
 [
   {
+    "version": "1.1",
+    "date": "2026-11-10",
+    "notes": {
+      "fa": [
+        "نسخه‌ی جدید با بهبودها و رفع اشکال‌ها."
+      ],
+      "ar": [
+        "إصدار جديد مع تحسينات وإصلاحات للأخطاء."
+      ],
+      "en": [
+        "New version with improvements and bug fixes."
+      ]
+    }
+  },
+  {
     "version": "1.0",
     "date": "2026-11-01",
     "notes": {
-      "fa": ["اولین نسخه‌ی آریو: برنامه‌ریز روزانه با یادآور، تایمر تمرکز و آمار پیشرفت."],
-      "ar": ["الإصدار الأول من آريو: مخطط يومي مع تذكيرات ومؤقّت تركيز وإحصاءات تقدّم."],
-      "en": ["First release of Ario: a daily planner with reminders, a focus timer and progress stats."]
+      "fa": [
+        "اولین نسخه‌ی آریو: برنامه‌ریز روزانه با یادآور، تایمر تمرکز و آمار پیشرفت."
+      ],
+      "ar": [
+        "الإصدار الأول من آريو: مخطط يومي مع تذكيرات ومؤقّت تركيز وإحصاءات تقدّم."
+      ],
+      "en": [
+        "First release of Ario: a daily planner with reminders, a focus timer and progress stats."
+      ]
     }
   }
 ]
