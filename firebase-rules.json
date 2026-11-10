@@ -1,0 +1,33 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "comments": {
+      ".read": true,
+      "$id": {
+        ".write": "!data.exists() && newData.exists()",
+        ".validate": "newData.hasChildren(['t','ts'])",
+        "n":  { ".validate": "newData.isString() && newData.val().length <= 40" },
+        "t":  { ".validate": "newData.isString() && newData.val().length >= 3 && newData.val().length <= 600" },
+        "r":  { ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 5" },
+        "p":  { ".validate": "newData.isString() && newData.val().length <= 40" },
+        "ts": { ".validate": "newData.val() == now" },
+        "o":  { ".validate": false },
+        "$other": { ".validate": false }
+      }
+    },
+    "tickets": {
+      ".read": false,
+      "$id": {
+        ".write": "!data.exists() && newData.exists()",
+        ".validate": "newData.hasChildren(['c','m','ts'])",
+        "n":  { ".validate": "newData.isString() && newData.val().length <= 40" },
+        "c":  { ".validate": "newData.isString() && newData.val().length >= 3 && newData.val().length <= 100" },
+        "k":  { ".validate": "newData.isString() && newData.val().length <= 2" },
+        "m":  { ".validate": "newData.isString() && newData.val().length >= 10 && newData.val().length <= 1000" },
+        "ts": { ".validate": "newData.val() == now" },
+        "$other": { ".validate": false }
+      }
+    }
+  }
+}

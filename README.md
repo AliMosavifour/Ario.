@@ -24,3 +24,23 @@ The version comes from the APK's `versionName`; set it in your app's build.gradl
 ## Edit
 - Texts (fa/ar/en): the `T` object at the bottom of `index.html` and `privacy.html`.
 - Support email on the privacy page: `CONTACT_EMAIL` at the top of the script in `privacy.html`.
+
+## Reviews and support (new)
+`index.html` now has two more pages: **Reviews** (`#p-comments`) with star ratings and replies, and **Support** (`#p-support`)
+with quick contact cards and a support-request form. Both are in fa/ar/en and follow the light/dark theme.
+
+Out of the box they run in **demo mode**: everything is saved in the visitor's own browser, so only they can see it.
+To share reviews between all visitors, connect a free Firebase Realtime Database (no server code needed):
+
+1. Create a Firebase project, then Build > Realtime Database > Create database.
+2. Rules tab: paste the contents of `firebase-rules.json` and publish. Visitors can only add reviews and requests;
+   nobody can edit or delete them, and support requests cannot be read by the public.
+3. Copy the database URL (like `https://xxxx-default-rtdb.firebaseio.com`) into `COMMUNITY.db` near the end of the script in `index.html`.
+4. Push to GitHub. Done.
+
+**Owner access.** Tap "Admin sign in" at the bottom of Reviews or Support and enter the database secret
+(Project settings > Service accounts > Database secrets). It is typed only in that dialog and kept in your browser,
+never in the code. Signed in, your replies show as "Ario team" with an official badge, you can delete reviews or replies,
+and the Support page lists the requests people sent. Keep the secret private.
+
+Contact cards on the Support page appear automatically when you fill in `SOCIAL` (telegram, instagram, email) in `index.html`.

@@ -517,6 +517,79 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .ccard .burst{position:absolute;inset:0;pointer-events:none;z-index:3;overflow:visible;transform:translateZ(120px)}
 .ccard .burst svg{position:absolute;width:22px;height:22px;margin:-11px 0 0 -11px;fill:var(--g);filter:drop-shadow(0 2px 6px color-mix(in srgb,var(--g) 70%,transparent));will-change:transform,opacity}
 @media (prefers-reduced-motion:reduce){.ccard .tilt.hop{animation:none}}
+/* community: reviews + support */
+.stores{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.store{display:flex;align-items:center;gap:10px;padding:7px 16px;padding-inline-start:8px;border-radius:16px;background:var(--glass);border:1px solid var(--glass-line);color:inherit;text-decoration:none;box-shadow:var(--shadow);transition:transform .2s}
+a.store:hover{transform:translateY(-2px)}
+.store img{width:36px;height:36px;border-radius:10px;display:block}
+.store small{display:block;font-size:11.5px;color:var(--muted);line-height:1.35}
+.store b{display:block;font-size:15px;line-height:1.35}
+.store.soon{opacity:.72;cursor:default}
+details p a{color:var(--accent);font-weight:600;text-underline-offset:3px}
+@media (min-width:861px) and (max-width:1120px){.links{gap:0}.links a{padding:6px 8px;font-size:13px}}
+.fld{width:100%;font:400 15px/1.6 var(--font-body);color:var(--ink);background:var(--glass);border:1px solid var(--glass-line);border-radius:16px;padding:11px 14px;min-height:46px;resize:vertical;transition:border-color .2s,box-shadow .2s}
+.fld:focus{outline:0;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 25%,transparent)}
+.fld::placeholder{color:var(--muted);opacity:.85}
+.note{color:var(--muted);font-size:13.5px}
+.hp{position:absolute;inset-inline-start:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
+.lk{border:0;background:none;color:var(--accent);font:600 14px var(--font-body);cursor:pointer;padding:4px 0}
+.lk.dl{color:var(--k-rep)}
+.badge{font-style:normal;font-size:11.5px;font-weight:700;padding:1px 9px;border-radius:99px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--on-accent);white-space:nowrap}
+.fmsg{font-size:14px;color:var(--muted)}.fmsg.ok{color:var(--k-tag)}.fmsg.err{color:var(--k-rep)}
+.cm-act{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.cm-top{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;padding:24px 30px;margin-bottom:12px}
+.cm-sc{display:grid;gap:6px;justify-items:center;text-align:center}
+.cm-big{font:800 52px/1 var(--font-display)}
+[dir=rtl] .cm-big{font-family:var(--font-body)}
+.cm-bars{display:grid;gap:7px}
+.cm-bars .br{display:grid;grid-template-columns:16px 1fr 30px;gap:10px;align-items:center;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.cm-bars .br i{display:block;height:8px;border-radius:9px;background:var(--line);overflow:hidden}
+.cm-bars .br i b{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .6s cubic-bezier(.2,.9,.25,1)}
+.stars{display:inline-flex;gap:2px}
+.stars span{color:var(--muted);opacity:.35;display:block}
+.stars span.on{color:#f5a623;opacity:1}
+.stars svg{width:16px;height:16px;display:block}
+.cm-sc .stars svg{width:20px;height:20px}
+.cm-form{padding:24px;display:grid;gap:12px;margin-bottom:12px}
+.cm-form h3{font-size:18px;font-weight:700}
+[dir=rtl] .cm-form h3{font-weight:800}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.rate{display:flex;gap:2px}
+.rate button{border:0;background:none;padding:2px;cursor:pointer;color:var(--muted);opacity:.45;transition:transform .15s,color .15s,opacity .15s}
+.rate button svg{width:32px;height:32px;display:block}
+.rate button.on{color:#f5a623;opacity:1}
+.rate button:hover{transform:scale(1.15)}
+.cm-tools{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:6px 4px 18px}
+.cm-list{display:grid;gap:14px}
+.cm-empty{padding:28px;text-align:center;color:var(--muted);display:grid;gap:12px;justify-items:center}
+.cm-item{padding:20px 22px}
+.cm-h{display:flex;align-items:center;gap:12px}
+.cm-who{display:grid;min-width:0;margin-inline-end:auto}
+.cm-nm{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cm-nm b{font-weight:700;overflow-wrap:anywhere}
+.cm-who time{color:var(--muted);font-size:13px}
+.av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font:700 18px var(--font-body);flex:none;overflow:hidden}
+.av.sm{width:34px;height:34px;font-size:15px}
+.av img{width:100%;height:100%;object-fit:cover;display:block}
+.cm-t{margin-top:10px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15.5px}
+.cm-a{display:flex;gap:18px;margin-top:6px}
+.cm-reps{margin-top:14px;display:grid;gap:10px;padding-inline-start:14px;border-inline-start:2px solid var(--line)}
+.cm-rep{padding:12px 14px;border-radius:18px;background:var(--line)}
+.cm-rep.own{background:color-mix(in srgb,var(--accent) 13%,transparent)}
+.cm-rep .cm-t{margin-top:6px;font-size:15px}
+.cm-rf{display:grid;gap:10px;margin-top:12px}
+.sp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:16px}
+.sp-c{text-decoration:none;color:inherit;transition:transform .2s}
+.sp-c:hover{transform:translateY(-3px)}
+.sp-tk{margin-top:24px}
+.sp-tk h3{font-size:18px;margin-bottom:4px}
+.tk{padding:16px 18px;margin-top:10px;display:grid;gap:6px}
+.tk-h{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+.tk-h time{color:var(--muted);font-size:13px;margin-inline-start:auto}
+.tk p{white-space:pre-wrap;overflow-wrap:anywhere}
+.tk .ct{color:var(--accent);font-size:14px;overflow-wrap:anywhere}
+.clb.admf{display:grid;gap:12px;padding-top:4px}
+@media (max-width:560px){.two{grid-template-columns:1fr}.cm-top{grid-template-columns:1fr;gap:20px;padding:22px}.cm-item{padding:18px}}
 </style>
 <script>try{var c=localStorage.getItem('ario.char');if(c)document.documentElement.dataset.char=c}catch(e){}</script>
 </head><body>
@@ -526,7 +599,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   <nav aria-label="main">
     <a class="brand" href="#top"><img decoding="async" src="assets/icon.webp" alt=""><span>Ario</span></a>
     <div class="links">
-      <a href="#p-features" data-i="nav_f"></a><a href="#p-focus" data-i="nav_t"></a><a href="#p-demo" data-i="nav_d"></a><a href="#p-chars" data-i="nav_c"></a><a href="#p-screens" data-i="nav_s"></a><a href="#p-install" data-i="nav_i"></a><a href="#p-faq" data-i="nav_q"></a>
+      <a href="#p-features" data-i="nav_f"></a><a href="#p-focus" data-i="nav_t"></a><a href="#p-demo" data-i="nav_d"></a><a href="#p-chars" data-i="nav_c"></a><a href="#p-screens" data-i="nav_s"></a><a href="#p-install" data-i="nav_i"></a><a href="#p-faq" data-i="nav_q"></a><a href="#p-comments" data-i="nav_cm"></a><a href="#p-support" data-i="nav_sp"></a>
     </div>
     <div class="ctl">
       <div class="seg" role="group" aria-label="language">
@@ -545,7 +618,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   <div class="scrim" id="scrim"></div>
   <div class="menu" id="menu">
     <div class="mhead"><button class="burger" id="mclose" type="button" aria-expanded="false" data-ia="close"><i class="ln"><b></b><b></b><b></b></i><svg class="rg" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18"/></svg></button><span class="brand"><img decoding="async" src="assets/icon.webp" alt=""><span>Ario</span></span></div>
-    <a href="#top" data-i="nav_h"></a><a href="#p-features" data-i="nav_f"></a><a href="#p-sentence" data-i="th"></a><a href="#p-focus" data-i="nav_t"></a><a href="#p-chars" data-i="nav_c"></a><a href="#p-demo" data-i="nav_d"></a><a href="#p-screens" data-i="nav_s"></a><a href="#p-install" data-i="nav_i"></a><a href="#p-faq" data-i="nav_q"></a>
+    <a href="#top" data-i="nav_h"></a><a href="#p-features" data-i="nav_f"></a><a href="#p-sentence" data-i="th"></a><a href="#p-focus" data-i="nav_t"></a><a href="#p-chars" data-i="nav_c"></a><a href="#p-demo" data-i="nav_d"></a><a href="#p-screens" data-i="nav_s"></a><a href="#p-install" data-i="nav_i"></a><a href="#p-faq" data-i="nav_q"></a><a href="#p-comments" data-i="nav_cm"></a><a href="#p-support" data-i="nav_sp"></a>
     <hr><a href="privacy.html" data-i="priv"></a>
     <button class="btn ghost" id="pwa" type="button" data-i="pwa_i" hidden style="justify-content:center;font-size:16px;padding:13px 16px"></button>
     <a class="btn" href="ario.apk" data-i="dl"></a>
@@ -566,6 +639,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
         </a>
         <a class="btn ghost" href="#p-install" data-i="how"></a>
       </div>
+      <div class="stores" data-stores></div>
       <p class="dlc" id="dlc" hidden></p>
       <p class="meta" data-i="meta"></p>
       <div class="glass qrbox" id="qrbox" hidden>
@@ -690,6 +764,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
   <section id="install">
     <div class="head"><h2 data-i="ih"></h2><p data-i="ip"></p></div>
+    <div class="stores" data-stores style="margin:-12px 0 24px"></div>
     <div class="steps">
       <div class="glass step"><h3 data-i="s1t"></h3><p data-i="s1d"></p></div>
       <div class="glass step"><h3 data-i="s2t"></h3><p data-i="s2d"></p></div>
@@ -708,8 +783,44 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <div class="head"><h2 data-i="qh"></h2></div>
     <details class="glass" open><summary data-i="q1"></summary><p data-i="a1"></p></details>
     <details class="glass"><summary data-i="q2"></summary><p data-i="a2"></p></details>
-    <details class="glass"><summary data-i="q3"></summary><p data-i="a3"></p></details>
+    <details class="glass"><summary data-i="q3"></summary><p data-i="a3" data-lk="a3l"></p></details>
     <details class="glass"><summary data-i="q4"></summary><p data-i="a4"></p></details>
+  </section>
+
+  <section id="comments">
+    <div class="head"><h2 data-i="cm_h"></h2><p data-i="cm_p"></p></div>
+    <div class="glass cm-top" id="cmsum"></div>
+    <form class="glass cm-form" id="cmform" novalidate>
+      <h3 data-i="cm_wh"></h3>
+      <div class="rate" id="cmrate" role="radiogroup" data-ia="cm_rate"></div>
+      <input class="fld" name="n" maxlength="40" autocomplete="nickname" data-ip="cm_name">
+      <textarea class="fld" name="t" rows="3" maxlength="600" data-ip="cm_text"></textarea>
+      <input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="cm-act"><button class="btn" type="submit" id="cmsend"><span data-i="cm_send"></span></button><span class="fmsg" id="cmmsg" role="status" aria-live="polite"></span></div>
+    </form>
+    <div class="cm-tools"><span class="note" id="cmnote"></span><button class="clbtn admbtn" type="button"></button></div>
+    <div class="cm-list" id="cmlist"></div>
+  </section>
+
+  <section id="support">
+    <div class="head"><h2 data-i="sp_h"></h2><p data-i="sp_p"></p></div>
+    <div class="sp-grid" id="spgrid"></div>
+    <form class="glass cm-form sp-form" id="spform" novalidate>
+      <h3 data-i="sp_ft"></h3>
+      <div class="two">
+        <input class="fld" name="n" maxlength="40" autocomplete="name" data-ip="sp_n">
+        <input class="fld" name="c" maxlength="100" autocomplete="email" dir="auto" data-ip="sp_c">
+      </div>
+      <select class="fld" name="k" data-ia="sp_k">
+        <option value="b" data-i="sp_k1"></option><option value="q" data-i="sp_k2"></option><option value="s" data-i="sp_k3"></option><option value="o" data-i="sp_k4"></option>
+      </select>
+      <textarea class="fld" name="m" rows="5" maxlength="1000" data-ip="sp_m"></textarea>
+      <p class="note" data-i="sp_hint"></p>
+      <input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="cm-act"><button class="btn" type="submit" id="spsend"><span data-i="sp_send"></span></button><span class="fmsg" id="spmsg" role="status" aria-live="polite"></span></div>
+    </form>
+    <div class="sp-tk" id="sptk" hidden><h3 data-i="sp_tk"></h3><div id="sptkl"></div></div>
+    <div class="cm-tools"><span class="note" id="spnote"></span><button class="clbtn admbtn" type="button"></button></div>
   </section>
 
   <section>
@@ -737,7 +848,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       </div>
       <div role="navigation" aria-label="help">
         <h3 data-i="ft_help"></h3>
-        <ul><li><a href="#p-install" data-i="nav_i"></a></li><li><a href="#p-faq" data-i="nav_q"></a></li><li><a href="privacy.html" data-i="priv"></a></li></ul>
+        <ul><li><a href="#p-install" data-i="nav_i"></a></li><li><a href="#p-faq" data-i="nav_q"></a></li><li><a href="#p-comments" data-i="nav_cm"></a></li><li><a href="#p-support" data-i="nav_sp"></a></li><li><a href="privacy.html" data-i="priv"></a></li></ul>
       </div>
       <div id="ftcon" hidden>
         <h3 data-i="ft_con"></h3>
@@ -754,11 +865,76 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <dialog id="sc" class="cld scd" aria-labelledby="sct"><div class="clh"><h2 id="sct" data-i="sc_t"></h2><button class="ico" id="scx" type="button" data-ia="cl_x" aria-label="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div><div class="clb"><canvas id="scv" width="1080" height="1920"></canvas><div class="scact"><button class="btn" id="scdl" type="button" data-i="sc_dl"></button><button class="btn ghost" id="scsh" type="button" data-i="sc_sh"></button></div><p class="scnote" data-i="sc_n"></p></div></dialog>
 <dialog id="cl" class="cld" aria-labelledby="clt"><div class="clh"><h2 id="clt" data-i="cl_t"></h2><button class="ico" id="clx" type="button" data-i="cl_x" aria-label="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div><div class="clb" id="clb"></div></dialog>
 
+<dialog id="adm" class="cld" aria-labelledby="admt"><div class="clh"><h2 id="admt" data-i="adm_t"></h2><button class="ico" id="admx" type="button" data-ia="cl_x" aria-label="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div><form class="clb admf" id="admf"><p class="note" data-i="adm_p"></p><input class="fld" id="admk" type="password" autocomplete="off" data-ip="adm_key"><div class="cm-act"><button class="btn" type="submit"><span data-i="adm_go"></span></button><span class="fmsg" id="admmsg" role="status" aria-live="polite"></span></div></form></dialog>
+
 <script src="assets/qr.js"></script>
 <script>
 (function(){
 var T={
 fa:{dir:'rtl',lang:'fa',
+ st_soon:'به‌زودی در',st_get:'دریافت از',st_bazaar:'کافه‌بازار',st_myket:'مایکت',
+ a3l:'نسخه‌ی اندروید و مدل گوشی را برای ما بنویس',
+ nav_cm:'نظرات',
+ nav_sp:'پشتیبانی',
+ cm_h:'نظرات کاربران',
+ cm_p:'تجربه‌ات از آریو را بنویس یا به نظر بقیه پاسخ بده.',
+ cm_cnt:'{n} نظر',
+ cm_none:'هنوز نظری ثبت نشده. اولین نفر باش!',
+ cm_load:'در حال بارگذاری…',
+ cm_wh:'نظر خودت را بنویس',
+ cm_rate:'امتیاز',
+ cm_star:'امتیاز {n} از ۵',
+ cm_name:'نام (اختیاری)',
+ cm_text:'نظرت درباره‌ی آریو…',
+ cm_send:'ثبت نظر',
+ cm_reply:'پاسخ',
+ cm_rtext:'پاسخت را بنویس…',
+ cm_rsend:'ارسال پاسخ',
+ cm_cancel:'انصراف',
+ cm_more:'نمایش نظرهای بیشتر',
+ cm_team:'تیم آریو',
+ cm_official:'پاسخ رسمی',
+ cm_anon:'کاربر ناشناس',
+ cm_del:'حذف',
+ cm_delq:'این مورد (و پاسخ‌هایش) حذف شود؟',
+ cm_now:'همین حالا',
+ cm_ok:'نظرت ثبت شد. ممنون!',
+ cm_e_text:'متن را بنویس (حداقل ۳ حرف).',
+ cm_e_wait:'کمی صبر کن و دوباره امتحان کن.',
+ cm_e_net:'ارتباط با سرور برقرار نشد. دوباره تلاش کن.',
+ cm_retry:'تلاش دوباره',
+ cm_local:'حالت آزمایشی: نظرها فقط روی همین دستگاه ذخیره می‌شوند.',
+ adm_in:'ورود مدیر',
+ adm_out:'خروج مدیر',
+ adm_t:'ورود مدیر',
+ adm_p:'کلید مدیریت را وارد کن تا بتوانی با نام «تیم آریو» پاسخ بدهی و نظرها و درخواست‌ها را حذف کنی.',
+ adm_key:'کلید مدیریت',
+ adm_go:'ورود',
+ adm_bad:'کلید معتبر نیست.',
+ adm_on:'به‌عنوان مدیر وارد شده‌ای؛ پاسخ‌ها با نام «تیم آریو» ثبت می‌شوند.',
+ sp_h:'پشتیبانی',
+ sp_p:'سؤال یا مشکلی داری؟ اول سوالات متداول را ببین؛ اگر جواب نگرفتی، پیام بفرست.',
+ sp_faq_t:'سوالات متداول',
+ sp_faq_d:'پاسخ رایج‌ترین پرسش‌ها همین حالا آماده است.',
+ sp_tg_d:'پیام مستقیم در تلگرام',
+ sp_ig_d:'پیام در اینستاگرام',
+ sp_em_d:'برایمان ایمیل بفرست',
+ sp_ft:'ارسال درخواست پشتیبانی',
+ sp_n:'نام (اختیاری)',
+ sp_c:'ایمیل یا آیدی تلگرام برای پاسخ',
+ sp_k:'موضوع',
+ sp_k1:'مشکل فنی',
+ sp_k2:'سؤال',
+ sp_k3:'پیشنهاد',
+ sp_k4:'موضوع دیگر',
+ sp_m:'مشکل یا سؤالت را توضیح بده…',
+ sp_hint:'برای مشکل فنی، مدل گوشی و نسخه‌ی اندروید را هم بنویس.',
+ sp_send:'ارسال درخواست',
+ sp_ok:'درخواستت ثبت شد. کد پیگیری: {id}',
+ sp_e_c:'راه تماس را بنویس تا بتوانیم جواب بدهیم.',
+ sp_e_m:'پیام را کمی کامل‌تر بنویس (حداقل ۱۰ حرف).',
+ sp_tk:'درخواست‌های پشتیبانی',
+ sp_tk0:'هنوز درخواستی نیست.',
  nav_f:'امکانات',nav_s:'تصاویر',nav_i:'نصب',nav_q:'سوالات',dl_short:'دانلود',
  badge:'نسخه {v} برای اندروید',h1a:'کارهای هر روزت،',h1b:'شیشه‌ای و روشن.',
  lead:'آریو برنامه‌ی روزانه، یادآور، تایمر تمرکز و آمار پیشرفت توست. کارها را با یک جمله می‌نویسی، زمانش را می‌گذاری و هر شب می‌بینی چقدر جلو رفته‌ای.',
@@ -789,6 +965,69 @@ fa:{dir:'rtl',lang:'fa',
  fin_h:'آماده‌ای شروع کنی؟',fin_p:'همین حالا آریو را نصب کن و برنامه‌ی امروزت را بساز.',
  ft_tag:'برنامه‌ریز روزانه با یادآور، تایمر تمرکز و آمار پیشرفت، برای اندروید.',ft_ex:'کاوش',ft_help:'راهنما',ft_con:'ارتباط',ft_v:'نسخه {v}',ft_up:'بالای صفحه',cl_btn:'تغییرات نسخه‌ها',cl_t:'تغییرات نسخه‌ها',cl_new:'جدید',cl_x:'بستن',dlc_t:'تا امروز {n} نفر دانلود کرده‌اند',cl_none:'هنوز تغییری ثبت نشده',nav_h:'خانه',next:'بخش بعدی',menu:'منو',close:'بستن منو',nav_c:'شخصیت‌ها',th:'با یک جمله بنویس',tp:'جمله‌ات را همین‌جا بنویس. تاریخ، ساعت، برچسب و اولویت همان لحظه از دل جمله بیرون می‌آید و کارت ساخته می‌شود.',tnote:'برچسب را با # و اولویت را با ! بنویس. هرچه می‌نویسی فقط در مرورگر خودت می‌ماند.',t_ph:'مثلاً: فردا ساعت ۵ عصر جلسه با علی #کار !مهم',t_try:'امتحان کن',t_lbl:'جمله‌ی کار',t_empty:'جمله‌ات را بنویس تا کارت ساخته شود',t_done:'علامت انجام شد',d0:'امروز',d1:'فردا',d2:'پس‌فردا',r_d:'هر روز',r_w:'هر هفته',r_m:'هر ماه',p_imp:'مهم',sc_btn:'کارت استوری',sc_t:'کارت استوری تو',sc_dl:'ذخیره‌ی تصویر',sc_sh:'اشتراک‌گذاری',sc_n:'تصویر ۱۰۸۰×۱۹۲۰ است و برای استوری آماده است.',tst:'کار ساخته شد',ch_h:'با شخصیت‌های آریو آشنا شو',ch_p:'چهار شخصیت برای حساب و صفحه‌ی اصلی‌ات. هر کدام رنگ و حال و هوای خودش را دارد.',ch_hint:'روی هر شخصیت بزن تا بچرخد و رنگ سایت با او عوض شود.',ch_reset:'بازگشت به رنگ پیش‌فرض',nav_d:'امتحان',qr_t:'با گوشی اسکن کن',qr_d:'آریو برای اندرویده. دوربین گوشی را روی کد بگیر تا دانلود شروع شود.',dh:'قبل از نصب امتحانش کن',dp:'این همان برنامه‌ی واقعی است که داخل قاب گوشی اجرا می‌شود. کار اضافه کن، یک کار را انجام بده و صفحه‌ها را بگرد.',dbtn:'اجرای نسخه‌ی آزمایشی',dnote:'اطلاعاتی که اینجا وارد می‌کنی فقط در مرورگر خودت می‌ماند.',priv:'حریم خصوصی',datel:' · آخرین به‌روزرسانی ',foot:'ساخته‌شده برای کسانی که می‌خواهند روزشان را در دست بگیرند',nav_t:'تایمر',ft_h:'تایمر تمرکز',ft_p:'۲۵ دقیقه تمرکز، ۵ دقیقه استراحت و بعد از هر چهار جلسه یک استراحت بلندتر. وقتی زمان تمام شود، یک صدای ملایم پخش می‌شود.',ft_focus:'تمرکز',ft_short:'استراحت کوتاه',ft_long:'استراحت بلند',ft_start:'شروع',ft_pause:'توقف',ft_resume:'ادامه',ft_reset:'از اول',ft_s:'جلسه‌ی {n} از ۴',ft_brk:'وقت استراحت',ft_df:'جلسه‌ی تمرکز تمام شد. وقت استراحت است.',ft_db:'استراحت تمام شد. آماده‌ی جلسه‌ی بعد هستی؟',ft_note:'صدای پایان را با دکمه‌ی بلندگوی بالای صفحه می‌توانی خاموش کنی.',ft_aria:'تایمر تمرکز'},
 ar:{dir:'rtl',lang:'ar',
+ st_soon:'قريبًا على',st_get:'احصل عليه من',st_bazaar:'كافه بازار',st_myket:'مايكت',
+ a3l:'أخبرنا بإصدار أندرويد وطراز هاتفك',
+ nav_cm:'التعليقات',
+ nav_sp:'الدعم',
+ cm_h:'آراء المستخدمين',
+ cm_p:'اكتب تجربتك مع آريو أو ردّ على آراء الآخرين.',
+ cm_cnt:'{n} تعليق',
+ cm_none:'لا توجد تعليقات بعد. كن الأول!',
+ cm_load:'جارٍ التحميل…',
+ cm_wh:'اكتب رأيك',
+ cm_rate:'التقييم',
+ cm_star:'التقييم {n} من ٥',
+ cm_name:'الاسم (اختياري)',
+ cm_text:'رأيك في آريو…',
+ cm_send:'إرسال التعليق',
+ cm_reply:'ردّ',
+ cm_rtext:'اكتب ردّك…',
+ cm_rsend:'إرسال الردّ',
+ cm_cancel:'إلغاء',
+ cm_more:'عرض المزيد من التعليقات',
+ cm_team:'فريق آريو',
+ cm_official:'ردّ رسمي',
+ cm_anon:'مستخدم مجهول',
+ cm_del:'حذف',
+ cm_delq:'هل تريد حذف هذا العنصر (وردوده)؟',
+ cm_now:'الآن',
+ cm_ok:'تم إرسال تعليقك. شكرًا!',
+ cm_e_text:'اكتب نصًّا (٣ أحرف على الأقل).',
+ cm_e_wait:'انتظر قليلًا ثم أعد المحاولة.',
+ cm_e_net:'تعذّر الاتصال بالخادم. أعد المحاولة.',
+ cm_retry:'إعادة المحاولة',
+ cm_local:'وضع تجريبي: تُحفظ التعليقات على هذا الجهاز فقط.',
+ adm_in:'دخول المشرف',
+ adm_out:'خروج المشرف',
+ adm_t:'دخول المشرف',
+ adm_p:'أدخل مفتاح الإدارة لتتمكن من الرد باسم «فريق آريو» وحذف التعليقات والطلبات.',
+ adm_key:'مفتاح الإدارة',
+ adm_go:'دخول',
+ adm_bad:'المفتاح غير صالح.',
+ adm_on:'تم تسجيل دخولك كمشرف؛ تُنشر الردود باسم «فريق آريو».',
+ sp_h:'الدعم',
+ sp_p:'لديك سؤال أو مشكلة؟ ابدأ بالأسئلة الشائعة، وإن لم تجد جوابًا فأرسل لنا رسالة.',
+ sp_faq_t:'الأسئلة الشائعة',
+ sp_faq_d:'إجابات أكثر الأسئلة تكرارًا جاهزة الآن.',
+ sp_tg_d:'رسالة مباشرة على تيليجرام',
+ sp_ig_d:'رسالة على إنستغرام',
+ sp_em_d:'راسلنا عبر البريد',
+ sp_ft:'إرسال طلب دعم',
+ sp_n:'الاسم (اختياري)',
+ sp_c:'بريدك أو معرّف تيليجرام للردّ',
+ sp_k:'الموضوع',
+ sp_k1:'مشكلة تقنية',
+ sp_k2:'سؤال',
+ sp_k3:'اقتراح',
+ sp_k4:'موضوع آخر',
+ sp_m:'اشرح مشكلتك أو سؤالك…',
+ sp_hint:'للمشاكل التقنية، اذكر طراز هاتفك وإصدار أندرويد.',
+ sp_send:'إرسال الطلب',
+ sp_ok:'تم تسجيل طلبك. رمز المتابعة: {id}',
+ sp_e_c:'اكتب وسيلة تواصل لنتمكن من الرد.',
+ sp_e_m:'اكتب رسالة أوضح قليلًا (١٠ أحرف على الأقل).',
+ sp_tk:'طلبات الدعم',
+ sp_tk0:'لا توجد طلبات بعد.',
  nav_f:'المزايا',nav_s:'الصور',nav_i:'التثبيت',nav_q:'الأسئلة',dl_short:'تحميل',
  badge:'الإصدار {v} لنظام أندرويد',h1a:'مهامك اليومية،',h1b:'زجاجية وواضحة.',
  lead:'آريو هو مخططك اليومي ومذكّرك ومؤقّت التركيز ولوحة تقدّمك. اكتب المهمة بجملة واحدة، حدّد وقتها، وشاهد كل مساء كم تقدّمت.',
@@ -819,6 +1058,69 @@ ar:{dir:'rtl',lang:'ar',
  fin_h:'جاهز للبدء؟',fin_p:'ثبّت آريو الآن وابنِ خطة يومك.',
  ft_tag:'مخطط يومي مع تذكيرات ومؤقّت تركيز وإحصاءات تقدّم، لنظام أندرويد.',ft_ex:'استكشف',ft_help:'مساعدة',ft_con:'تواصل',ft_v:'الإصدار {v}',ft_up:'أعلى الصفحة',cl_btn:'سجلّ التغييرات',cl_t:'سجلّ التغييرات',cl_new:'جديد',cl_x:'إغلاق',dlc_t:'تم التنزيل {n} مرة حتى الآن',cl_none:'لا توجد تغييرات مسجّلة',nav_h:'الرئيسية',next:'القسم التالي',menu:'القائمة',close:'إغلاق القائمة',nav_c:'الشخصيات',th:'اكتب بجملة واحدة',tp:'اكتب جملتك هنا. يخرج التاريخ والوقت والوسم والأولوية منها في لحظتها وتُنشأ البطاقة.',tnote:'اكتب الوسم بعلامة # والأولوية بعلامة !. ما تكتبه يبقى في متصفحك فقط.',t_ph:'مثلاً: غدًا الساعة 5 مساءً اجتماع مع علي #عمل !مهم',t_try:'جرّب',t_lbl:'جملة المهمة',t_empty:'اكتب جملتك لتُنشأ البطاقة',t_done:'علامة الإنجاز',d0:'اليوم',d1:'غدًا',d2:'بعد غد',r_d:'كل يوم',r_w:'كل أسبوع',r_m:'كل شهر',p_imp:'مهم',sc_btn:'بطاقة ستوري',sc_t:'بطاقة الستوري',sc_dl:'حفظ الصورة',sc_sh:'مشاركة',sc_n:'الصورة 1080×1920 وجاهزة للستوري.',tst:'تم إنشاء المهمة',ch_h:'تعرّف على شخصيات آريو',ch_p:'أربع شخصيات لحسابك وصفحتك الرئيسية، لكلٍّ لونه وأجواؤه.',ch_hint:'اضغط على أي شخصية لتدور ويتغيّر لون الموقع معها.',ch_reset:'العودة إلى اللون الافتراضي',nav_d:'جرّبه',qr_t:'امسح الرمز بهاتفك',qr_d:'آريو لنظام أندرويد. وجّه كاميرا هاتفك إلى الرمز ليبدأ التحميل.',dh:'جرّبه قبل التثبيت',dp:'هذا هو التطبيق الحقيقي يعمل داخل إطار الهاتف. أضف مهمة وأنجزها وتنقّل بين الصفحات.',dbtn:'تشغيل النسخة التجريبية',dnote:'ما تدخله هنا يبقى في متصفحك فقط.',priv:'الخصوصية',datel:' · آخر تحديث ',foot:'صُنع لمن يريد أن يمسك بزمام يومه',nav_t:'المؤقّت',ft_h:'مؤقّت التركيز',ft_p:'٢٥ دقيقة تركيز و٥ دقائق راحة، وبعد كل أربع جلسات راحة أطول. عند انتهاء الوقت يُسمع صوت هادئ.',ft_focus:'تركيز',ft_short:'راحة قصيرة',ft_long:'راحة طويلة',ft_start:'ابدأ',ft_pause:'إيقاف مؤقت',ft_resume:'استئناف',ft_reset:'إعادة',ft_s:'الجلسة {n} من ٤',ft_brk:'وقت الراحة',ft_df:'انتهت جلسة التركيز. حان وقت الراحة.',ft_db:'انتهت الراحة. هل أنت مستعد للجلسة التالية؟',ft_note:'يمكنك كتم صوت النهاية بزر السماعة أعلى الصفحة.',ft_aria:'مؤقّت التركيز'},
 en:{dir:'ltr',lang:'en',
+ st_soon:'Coming soon to',st_get:'Get it on',st_bazaar:'Cafe Bazaar',st_myket:'Myket',
+ a3l:'send us your Android version and phone model',
+ nav_cm:'Reviews',
+ nav_sp:'Support',
+ cm_h:'What people say',
+ cm_p:'Share your experience with Ario or reply to other people’s reviews.',
+ cm_cnt:'Reviews: {n}',
+ cm_none:'No reviews yet. Be the first!',
+ cm_load:'Loading…',
+ cm_wh:'Write a review',
+ cm_rate:'Rating',
+ cm_star:'Rated {n} out of 5',
+ cm_name:'Name (optional)',
+ cm_text:'What do you think of Ario?',
+ cm_send:'Post review',
+ cm_reply:'Reply',
+ cm_rtext:'Write your reply…',
+ cm_rsend:'Send reply',
+ cm_cancel:'Cancel',
+ cm_more:'Show more reviews',
+ cm_team:'Ario team',
+ cm_official:'Official',
+ cm_anon:'Anonymous',
+ cm_del:'Delete',
+ cm_delq:'Delete this item (and its replies)?',
+ cm_now:'just now',
+ cm_ok:'Your review is posted. Thank you!',
+ cm_e_text:'Write something (at least 3 characters).',
+ cm_e_wait:'Please wait a moment and try again.',
+ cm_e_net:'Could not reach the server. Please try again.',
+ cm_retry:'Try again',
+ cm_local:'Demo mode: reviews are saved on this device only.',
+ adm_in:'Admin sign in',
+ adm_out:'Admin sign out',
+ adm_t:'Admin sign in',
+ adm_p:'Enter the admin key to reply as “Ario team” and to delete reviews and requests.',
+ adm_key:'Admin key',
+ adm_go:'Sign in',
+ adm_bad:'That key is not valid.',
+ adm_on:'Signed in as admin; replies are posted as “Ario team”.',
+ sp_h:'Support',
+ sp_p:'Have a question or a problem? Check the FAQ first; if it does not help, send us a message.',
+ sp_faq_t:'FAQ',
+ sp_faq_d:'Answers to the most common questions are ready.',
+ sp_tg_d:'Message us on Telegram',
+ sp_ig_d:'Message us on Instagram',
+ sp_em_d:'Send us an email',
+ sp_ft:'Send a support request',
+ sp_n:'Name (optional)',
+ sp_c:'Email or Telegram ID for the reply',
+ sp_k:'Topic',
+ sp_k1:'Technical problem',
+ sp_k2:'Question',
+ sp_k3:'Suggestion',
+ sp_k4:'Something else',
+ sp_m:'Describe your problem or question…',
+ sp_hint:'For technical problems, include your phone model and Android version.',
+ sp_send:'Send request',
+ sp_ok:'Request received. Reference: {id}',
+ sp_e_c:'Add a way to reach you so we can reply.',
+ sp_e_m:'Please write a bit more (at least 10 characters).',
+ sp_tk:'Support requests',
+ sp_tk0:'No requests yet.',
  nav_f:'Features',nav_s:'Screens',nav_i:'Install',nav_q:'FAQ',dl_short:'Download',
  badge:'Version {v} for Android',h1a:'Your daily tasks,',h1b:'clear as glass.',
  lead:'Ario is your daily planner, reminder, focus timer and progress tracker. Write a task in one sentence, set its time, and see how far you got each night.',
@@ -856,7 +1158,11 @@ function setLang(l){
   var d=T[l]||T.fa;cur=T[l]?l:'fa';
   root.lang=d.lang;root.dir=d.dir;
   document.querySelectorAll('[data-i]').forEach(function(e){var v=d[e.getAttribute('data-i')];if(v!=null)e.textContent=v.replace('{v}',num(V.v,cur)).replace('{size}',num(V.mb.toFixed(1),cur)).replace('{date}',V.date?d.datel+'\u2066'+num(V.date,cur)+'\u2069':'')});
+  document.querySelectorAll('[data-lk]').forEach(function(e){var ph=d[e.getAttribute('data-lk')],t=e.textContent,i=ph?t.indexOf(ph):-1;if(i<0)return;var a=document.createElement('a');a.href='#p-comments';a.textContent=ph;e.textContent='';e.append(t.slice(0,i),a,t.slice(i+ph.length))});
   document.querySelectorAll('[data-ia]').forEach(function(e){e.setAttribute('aria-label',d[e.getAttribute('data-ia')]||'')});
+  document.querySelectorAll('[data-ip]').forEach(function(e){e.setAttribute('placeholder',d[e.getAttribute('data-ip')]||'')});
+  if(typeof CM!=='undefined'&&CM&&CM.render)CM.render();
+  if(typeof ST!=='undefined'&&ST&&ST.render)ST.render();
   document.querySelectorAll('[data-lang]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===cur)});
   if(typeof updPg==='function')updPg();
   var caps=['c1','c2','c3','c4','c5'];
@@ -898,9 +1204,9 @@ if(th)root.dataset.theme=th;
 setLang(l);
 
 /* section pages */
-var ROUTES=['features','sentence','focus','chars','demo','screens','install','faq'];
-var LBL={features:'nav_f',sentence:'th',focus:'nav_t',chars:'nav_c',demo:'nav_d',screens:'nav_s',install:'nav_i',faq:'nav_q'};
-var lastXY=null,RV='.head,.ftimer,.grid>*,.steps>*,.perms,details,.chars>*,.chint,.typer,.demo,.gal,.final';
+var ROUTES=['features','sentence','focus','chars','demo','screens','install','faq','comments','support'];
+var LBL={features:'nav_f',sentence:'th',focus:'nav_t',chars:'nav_c',demo:'nav_d',screens:'nav_s',install:'nav_i',faq:'nav_q',comments:'nav_cm',support:'nav_sp'};
+var lastXY=null,RV='.head,.ftimer,.grid>*,.steps>*,.perms,details,.chars>*,.chint,.typer,.demo,.gal,.final,.cm-top,.cm-form,.cm-tools,.cm-list,.sp-grid>*,.sp-tk';
 function curView(){var h=(location.hash||'').slice(1);h=h.indexOf('p-')===0?h.slice(2):'';return ROUTES.indexOf(h)>=0?h:null}
 function updPg(){
   var v=root.getAttribute('data-view');if(!v||!LBL)return;
@@ -921,6 +1227,7 @@ function applyView(){
     var pb=document.getElementById('pgbar');pb.classList.remove('rv');void pb.offsetWidth;pb.style.setProperty('--d',0);pb.classList.add('rv');
     var pn=document.getElementById('pgnext');pn.style.setProperty('--d',i+1);pn.classList.remove('rv');void pn.offsetWidth;pn.classList.add('rv');
   }
+  if(typeof CM!=='undefined'&&CM&&CM.view)CM.view(v);
   updPg();window.scrollTo({top:0,left:0,behavior:'instant'});
 }
 document.addEventListener('click',function(e){var a=e.target.closest('a[href^="#"]');if(a)lastXY=[e.clientX,e.clientY]},true);
@@ -1952,6 +2259,271 @@ try{fetch('version.json',{cache:'no-store'}).then(function(r){return r.ok?r.json
   if(!j||!j.version)return;V.v=j.version;if(j.size)V.mb=j.size/1048576;V.date=j.date||'';setLang(cur);
   document.querySelectorAll('a[href="ario.apk"]').forEach(function(a){if(j.file)a.setAttribute('href',j.file)});
 }).catch(function(){})}catch(e){}
+/* ===== app stores: paste your listing links; empty = shown as "coming soon" ===== */
+var STORES={bazaar:'',myket:''};
+var ST=(function(){
+  function render(){
+    var d=T[cur]||T.fa;
+    document.querySelectorAll('[data-stores]').forEach(function(box){
+      box.textContent='';
+      ['bazaar','myket'].forEach(function(k){
+        var on=!!STORES[k],a=document.createElement(on?'a':'span'),img=document.createElement('img'),t=document.createElement('span'),sm=document.createElement('small'),b=document.createElement('b');
+        a.className='store'+(on?'':' soon');
+        if(on){a.href=STORES[k];a.target='_blank';a.rel='noopener'}
+        img.src='assets/stores/'+k+'.svg';img.alt='';img.width=36;img.height=36;
+        sm.textContent=d[on?'st_get':'st_soon'];b.textContent=d['st_'+k];
+        t.appendChild(sm);t.appendChild(b);a.appendChild(img);a.appendChild(t);box.appendChild(a);
+      });
+    });
+  }
+  return {render:render};
+})();
+ST.render();
+/* ===== community: reviews with replies + support =====
+   COMMUNITY.db: Firebase Realtime Database URL (see README). Empty = demo mode, data stays on this device only. */
+var COMMUNITY={db:''};
+var CM=(function(){
+  var db=String(COMMUNITY.db||'').replace(/\/+$/,''),local=!db,adm=null;
+  var C=[],TK=[],shown=10,replyTo=null,rate=0,loaded=false,failed=false;
+  try{adm=localStorage.getItem('ario.adm')||null}catch(e){}
+  var STAR='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.2 1.2-6.5L2.5 9.5l6.6-.9z" fill="currentColor"/></svg>';
+  var IC={
+    faq:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.6 2.2c-.7.4-1.1.9-1.1 1.8M12 17h.01"/></svg>',
+    tg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4 3 11l6 2.5L11.5 20l3-4.5L19 19z"/><path d="M9 13.5 21 4"/></svg>',
+    ig:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>',
+    em:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>'
+  };
+  function g(i){return document.getElementById(i)}
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+  function D(){return T[cur]||T.fa}
+  function tx(k,r){var s=D()[k];if(s==null)s=T.fa[k]||'';if(r)for(var p in r)s=s.replace('{'+p+'}',r[p]);return s}
+  function ls(k){try{var a=JSON.parse(localStorage.getItem(k)||'[]');return Array.isArray(a)?a:[]}catch(e){return[]}}
+  function lss(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+  function lsv(k){try{return localStorage.getItem(k)||''}catch(e){return''}}
+  function fm(m,s,ok){m.textContent=s;m.className='fmsg '+(ok?'ok':'err')}
+  function gate(){return !!adm||Date.now()-(+lsv('ario.cmts')||0)>15000}
+  function stamp(){try{localStorage.setItem('ario.cmts',String(Date.now()))}catch(e){}}
+
+  /* ---- storage: Firebase REST, or localStorage in demo mode ---- */
+  function req(m,p,b,au,q){
+    var u=db+p+'.json',qs=[];if(q)qs.push(q);if(au&&adm)qs.push('auth='+encodeURIComponent(adm));if(qs.length)u+='?'+qs.join('&');
+    var o={method:m};if(b){o.headers={'Content-Type':'application/json'};o.body=JSON.stringify(b)}
+    return fetch(u,o).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()});
+  }
+  function uid(){return 'l'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
+  function arr(o){return o?Object.keys(o).map(function(k){var x=o[k]||{};x.id=k;return x}):[]}
+  function byTs(a,b){return (a.ts||0)-(b.ts||0)}
+  function loadC(){
+    if(local){C=ls('ario.cm').sort(byTs);return Promise.resolve()}
+    return req('GET','/comments',null,false,'orderBy=%22%24key%22&limitToLast=400').then(function(o){C=arr(o).sort(byTs)});
+  }
+  function loadT(){
+    if(!adm)return Promise.resolve();
+    if(local){TK=ls('ario.tk').sort(byTs);return Promise.resolve()}
+    return req('GET','/tickets',null,true).then(function(o){TK=arr(o).sort(byTs)});
+  }
+  function add(kind,o){
+    if(local){o.id=uid();o.ts=Date.now();var k=kind==='c'?'ario.cm':'ario.tk',a=ls(k);a.push(o);lss(k,a);return Promise.resolve(o.id)}
+    o.ts={'.sv':'timestamp'};
+    return req('POST',kind==='c'?'/comments':'/tickets',o,!!o.o).then(function(r){return r&&r.name});
+  }
+  function remove(kind,id){
+    if(local){var k=kind==='c'?'ario.cm':'ario.tk';lss(k,ls(k).filter(function(x){return x.id!==id&&x.p!==id}));return Promise.resolve()}
+    if(kind==='t')return req('DELETE','/tickets/'+id,null,true);
+    var m={};m['comments/'+id]=null;C.forEach(function(c){if(c.p===id)m['comments/'+c.id]=null});
+    return req('PATCH','/',m,true);
+  }
+
+  /* ---- small ui helpers ---- */
+  function ago(ts){
+    var s=Math.round((Date.now()-(+ts||Date.now()))/1000),u,v;
+    if(s<45)return tx('cm_now');
+    var m=Math.round(s/60);
+    if(m<60){u='minute';v=m}else{var h=Math.round(m/60);
+      if(h<24){u='hour';v=h}else{var d=Math.round(h/24);
+        if(d<30){u='day';v=d}else{var mo=Math.round(d/30);if(mo<12){u='month';v=mo}else{u='year';v=Math.round(d/365)}}}}
+    try{return new Intl.RelativeTimeFormat(D().lang,{numeric:'auto'}).format(-v,u)}catch(e){return ''}
+  }
+  function avatar(n,own,sm){
+    var a=el('span','av'+(sm?' sm':''));
+    if(own){var im=document.createElement('img');im.src='assets/icon.webp';im.alt='';a.appendChild(im);return a}
+    var h=0,i;for(i=0;i<n.length;i++)h=(h*31+n.charCodeAt(i))%360;
+    a.style.background='linear-gradient(135deg,hsl('+h+' 70% 52%),hsl('+((h+55)%360)+' 72% 46%))';
+    a.textContent=(Array.from(n)[0]||'?').toUpperCase();return a;
+  }
+  function stars(n){
+    var s=el('span','stars'),h='',i;s.setAttribute('role','img');s.setAttribute('aria-label',tx('cm_star',{n:num(n,cur)}));
+    for(i=1;i<=5;i++)h+='<span'+(i<=n?' class="on"':'')+'>'+STAR+'</span>';
+    s.innerHTML=h;return s;
+  }
+
+  /* ---- reviews ---- */
+  function renderSum(){
+    var b=g('cmsum');b.textContent='';
+    var P=C.filter(function(c){return !c.p}),R=P.filter(function(c){return c.r>0}),cnt=[0,0,0,0,0,0],s=0,i;
+    R.forEach(function(c){var r=Math.min(5,Math.max(1,Math.round(c.r)));cnt[r]++;s+=r});
+    var avg=R.length?s/R.length:0;
+    var l=el('div','cm-sc');l.appendChild(el('b','cm-big',R.length?num(avg.toFixed(1),cur):'–'));l.appendChild(stars(Math.round(avg)));l.appendChild(el('span','note',tx('cm_cnt',{n:num(P.length,cur)})));
+    var r=el('div','cm-bars');
+    for(i=5;i>=1;i--){var row=el('div','br'),t=el('i'),f=el('b');row.appendChild(el('span','',num(i,cur)));f.style.width=(R.length?Math.round(cnt[i]/R.length*100):0)+'%';t.appendChild(f);row.appendChild(t);row.appendChild(el('span','',num(cnt[i],cur)));r.appendChild(row)}
+    b.appendChild(l);b.appendChild(r);
+  }
+  function head(c,rep){
+    var own=c.o===1,nm=own?tx('cm_team'):(c.n||tx('cm_anon')),h=el('div','cm-h'),w=el('div','cm-who'),r=el('div','cm-nm'),b=el('b','',nm);
+    b.dir='auto';r.appendChild(b);if(own)r.appendChild(el('em','badge',tx('cm_official')));
+    w.appendChild(r);w.appendChild(el('time','',ago(c.ts)));
+    h.appendChild(avatar(nm,own,rep));h.appendChild(w);
+    if(!rep&&c.r>0)h.appendChild(stars(c.r));
+    return h;
+  }
+  function txt(c){var p=el('p','cm-t',c.t);p.dir='auto';return p}
+  function acts(c,rep){
+    var a=el('div','cm-a');
+    if(!rep){var b=el('button','lk',tx('cm_reply'));b.type='button';b.onclick=function(){replyTo=(replyTo===c.id?null:c.id);renderList()};a.appendChild(b)}
+    if(adm){var d=el('button','lk dl',tx('cm_del'));d.type='button';d.onclick=function(){
+      if(!confirm(tx('cm_delq')))return;
+      remove('c',c.id).then(loadC).then(renderAll).catch(function(){alert(tx('cm_e_net'))});
+    };a.appendChild(d)}
+    return a;
+  }
+  function rform(c){
+    var f=el('form','cm-rf'),n=null,t=el('textarea','fld'),row=el('div','cm-act'),s=el('button','btn',tx('cm_rsend')),x=el('button','btn ghost',tx('cm_cancel')),m=el('span','fmsg');
+    f.noValidate=true;
+    if(!adm){n=el('input','fld');n.maxLength=40;n.placeholder=tx('cm_name');n.value=lsv('ario.name');f.appendChild(n)}
+    t.rows=2;t.maxLength=600;t.placeholder=tx('cm_rtext');f.appendChild(t);
+    s.type='submit';x.type='button';x.onclick=function(){replyTo=null;renderList()};m.setAttribute('role','status');m.setAttribute('aria-live','polite');
+    row.appendChild(s);row.appendChild(x);row.appendChild(m);f.appendChild(row);
+    f.onsubmit=function(e){
+      e.preventDefault();var v=t.value.trim();
+      if(v.length<3){fm(m,tx('cm_e_text'));return}
+      if(!gate()){fm(m,tx('cm_e_wait'));return}
+      var o={t:v.slice(0,600),p:c.id};
+      if(adm)o.o=1;else{o.n=(n.value||'').trim().slice(0,40);try{localStorage.setItem('ario.name',o.n)}catch(_){}}
+      s.disabled=true;
+      add('c',o).then(function(){stamp();replyTo=null;return loadC()}).then(renderAll).catch(function(){s.disabled=false;fm(m,tx('cm_e_net'))});
+    };
+    return f;
+  }
+  function renderList(){
+    var L=g('cmlist');L.textContent='';
+    if(failed){var e=el('div','glass cm-empty'),rb=el('button','btn ghost',tx('cm_retry'));e.appendChild(el('span','',tx('cm_e_net')));rb.type='button';rb.onclick=function(){view('comments')};e.appendChild(rb);L.appendChild(e);return}
+    if(!loaded){L.appendChild(el('p','glass cm-empty',tx('cm_load')));return}
+    var P=C.filter(function(c){return !c.p}).sort(function(a,b){return byTs(b,a)}),R={};
+    if(!P.length){L.appendChild(el('p','glass cm-empty',tx('cm_none')));return}
+    C.forEach(function(c){if(c.p)(R[c.p]=R[c.p]||[]).push(c)});
+    P.slice(0,shown).forEach(function(c){
+      var it=el('article','glass cm-item'),rs=R[c.id];
+      it.appendChild(head(c,false));it.appendChild(txt(c));it.appendChild(acts(c,false));
+      if(rs&&rs.length){var w=el('div','cm-reps');rs.forEach(function(r){var x=el('div','cm-rep'+(r.o===1?' own':''));x.appendChild(head(r,true));x.appendChild(txt(r));if(adm)x.appendChild(acts(r,true));w.appendChild(x)});it.appendChild(w)}
+      if(replyTo===c.id){var f=rform(c);it.appendChild(f);setTimeout(function(){var q=f.querySelector('textarea');if(q)q.focus()},0)}
+      L.appendChild(it);
+    });
+    if(P.length>shown){var mb=el('button','btn ghost',tx('cm_more'));mb.type='button';mb.style.justifySelf='center';mb.onclick=function(){shown+=10;renderList()};L.appendChild(mb)}
+  }
+  function paintRate(){
+    var w=g('cmrate');w.textContent='';
+    for(var i=1;i<=5;i++)(function(i){
+      var b=el('button',i<=rate?'on':'');b.type='button';b.setAttribute('role','radio');b.setAttribute('aria-checked',String(rate===i));b.setAttribute('aria-label',tx('cm_star',{n:num(i,cur)}));b.innerHTML=STAR;
+      b.onclick=function(){rate=(rate===i?0:i);paintRate()};w.appendChild(b);
+    })(i);
+  }
+  function sendC(e){
+    e.preventDefault();var f=g('cmform'),m=g('cmmsg'),b=g('cmsend');
+    if(f.hp.value)return;
+    var t=f.t.value.trim();
+    if(t.length<3){fm(m,tx('cm_e_text'));return}
+    if(!gate()){fm(m,tx('cm_e_wait'));return}
+    var o={t:t.slice(0,600),n:f.n.value.trim().slice(0,40)};if(rate)o.r=rate;
+    try{localStorage.setItem('ario.name',o.n)}catch(_){}
+    b.disabled=true;
+    add('c',o).then(function(){stamp();f.t.value='';rate=0;paintRate();b.disabled=false;fm(m,tx('cm_ok'),true);return loadC()}).then(function(){failed=false;loaded=true;renderAll()}).catch(function(){b.disabled=false;fm(m,tx('cm_e_net'))});
+  }
+
+  /* ---- support ---- */
+  function renderSp(){
+    var G=g('spgrid');G.textContent='';
+    function link(v,base){return /^https?:/.test(v)?v:base+v.replace('@','')}
+    var cs=[['faq',tx('sp_faq_t'),tx('sp_faq_d'),'#p-faq',0]];
+    if(SOCIAL.telegram)cs.push(['tg','Telegram',tx('sp_tg_d'),link(SOCIAL.telegram,'https://t.me/'),1]);
+    if(SOCIAL.instagram)cs.push(['ig','Instagram',tx('sp_ig_d'),link(SOCIAL.instagram,'https://instagram.com/'),1]);
+    if(SOCIAL.email)cs.push(['em',SOCIAL.email,tx('sp_em_d'),'mailto:'+SOCIAL.email,0]);
+    cs.forEach(function(c){
+      var a=el('a','glass card sp-c'),ic=el('div','ic');ic.innerHTML=IC[c[0]];a.href=c[3];if(c[4]){a.target='_blank';a.rel='noopener'}
+      a.appendChild(ic);a.appendChild(el('h3','',c[1]));a.appendChild(el('p','',c[2]));G.appendChild(a);
+    });
+  }
+  function sendT(e){
+    e.preventDefault();var f=g('spform'),m=g('spmsg'),b=g('spsend');
+    if(f.hp.value)return;
+    var c=f.c.value.trim(),t=f.m.value.trim();
+    if(c.length<3){fm(m,tx('sp_e_c'));return}
+    if(t.length<10){fm(m,tx('sp_e_m'));return}
+    if(!gate()){fm(m,tx('cm_e_wait'));return}
+    var o={n:f.n.value.trim().slice(0,40),c:c.slice(0,100),k:f.k.value,m:t.slice(0,1000)};
+    b.disabled=true;
+    add('t',o).then(function(id){
+      stamp();f.m.value='';b.disabled=false;
+      fm(m,tx('sp_ok',{id:String(id||Math.random().toString(36).slice(2)).slice(-6).toUpperCase()}),true);
+      if(adm)return loadT().then(renderTk);
+    }).catch(function(){b.disabled=false;fm(m,tx('cm_e_net'))});
+  }
+  function renderTk(){
+    var box=g('sptk');box.hidden=!adm;if(!adm)return;
+    var L=g('sptkl');L.textContent='';
+    if(!TK.length){L.appendChild(el('p','note',tx('sp_tk0')));return}
+    var K={b:'sp_k1',q:'sp_k2',s:'sp_k3',o:'sp_k4'};
+    TK.slice().reverse().forEach(function(k){
+      var it=el('div','glass tk'),h=el('div','tk-h'),nm=el('b','',k.n||tx('cm_anon')),p=el('p','',k.m),ct=el('span','ct',k.c);
+      nm.dir='auto';p.dir='auto';ct.dir='auto';
+      h.appendChild(el('em','badge',tx(K[k.k]||'sp_k4')));h.appendChild(nm);h.appendChild(el('time','',ago(k.ts)));
+      var d=el('button','lk dl',tx('cm_del'));d.type='button';d.style.justifySelf='start';
+      d.onclick=function(){if(!confirm(tx('cm_delq')))return;remove('t',k.id).then(loadT).then(renderTk).catch(function(){alert(tx('cm_e_net'))})};
+      it.appendChild(h);it.appendChild(ct);it.appendChild(p);it.appendChild(d);L.appendChild(it);
+    });
+  }
+
+  /* ---- admin (owner) ---- */
+  function paintAdm(){document.querySelectorAll('.admbtn').forEach(function(b){b.textContent=tx(adm?'adm_out':'adm_in')})}
+  function setAdm(k){
+    adm=k||null;try{if(adm)localStorage.setItem('ario.adm',adm);else localStorage.removeItem('ario.adm')}catch(e){}
+    if(!adm)TK=[];
+    paintAdm();renderAll();
+    if(adm)loadT().then(renderTk).catch(function(){});
+  }
+  function login(k){
+    if(local)return Promise.resolve();
+    var prev=adm;adm=k;
+    return req('GET','/tickets',null,true,'shallow=true').then(function(){},function(e){adm=prev;throw e});
+  }
+
+  /* ---- wiring ---- */
+  function renderAll(){
+    renderSum();renderList();renderTk();
+    var n=local?tx('cm_local'):(adm?tx('adm_on'):'');
+    g('cmnote').textContent=n;g('spnote').textContent=n;
+  }
+  function render(){paintAdm();paintRate();renderSp();renderAll()}
+  function view(v){
+    if(v==='comments'){loadC().then(function(){failed=false;loaded=true;renderAll()},function(){failed=true;renderAll()})}
+    if(v==='support'){renderSp();if(adm)loadT().then(renderTk).catch(function(){})}
+  }
+  g('cmform').addEventListener('submit',sendC);
+  g('spform').addEventListener('submit',sendT);
+  var nm0=lsv('ario.name');if(nm0)g('cmform').n.value=nm0;
+  var dlg=g('adm');
+  document.querySelectorAll('.admbtn').forEach(function(b){b.addEventListener('click',function(){
+    if(adm){setAdm(null);return}
+    g('admk').value='';g('admmsg').textContent='';if(dlg.showModal)dlg.showModal();g('admk').focus();
+  })});
+  g('admx').addEventListener('click',function(){dlg.close()});
+  g('admf').addEventListener('submit',function(e){
+    e.preventDefault();var k=g('admk').value.trim(),m=g('admmsg');if(!k)return;
+    login(k).then(function(){dlg.close();setAdm(k)},function(){fm(m,tx('adm_bad'))});
+  });
+  render();
+  return {render:render,view:view};
+})();
+CM.view(curView());
 })();
 </script>
 
